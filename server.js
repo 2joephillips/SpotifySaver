@@ -29,7 +29,7 @@ app.use(function(req, res, next){
 app.use('/', api);
 
 app.get('*', function(req, res) {
-      res.sendfile('./public/views/index.html');
+      res.sendFile(__dirname + '/public/views/index.html');
     });
 
 /*
