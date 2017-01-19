@@ -9,7 +9,10 @@ const bodyParser = require('body-parser');
 const api = require('./routes/api');
 
 
+
 const app = express();
+//Angular Folder
+app.use(express.static(__dirname + '/public'));
 
 // Parsers for POST data
 app.use(bodyParser.json());
@@ -24,6 +27,10 @@ app.use(function(req, res, next){
 
 //Set our api routes
 app.use('/', api);
+
+app.get('*', function(req, res) {
+      res.sendfile('./public/views/index.html');
+    });
 
 /*
 *   Get port from environment and store in Express
