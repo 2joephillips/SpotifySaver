@@ -1,4 +1,4 @@
 (function(){
     'use strict';
-    angular.module('spotifySaver', ['SongService']);
+    angular.module('spotifySaver', ['ngRoute','appRoutes','SongService']);
 })()
