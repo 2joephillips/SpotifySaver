@@ -1,5 +1,6 @@
 (function(){
     'use strict';
+
     angular.module('SongService', [])
       .factory('Songs', Songs);
       
@@ -7,7 +8,7 @@
   function Songs($http){
       return {
         get: function() {
-          return $http.get('api/nerds');
+          return $http.get('/api/songs');
         }
       }
     }
