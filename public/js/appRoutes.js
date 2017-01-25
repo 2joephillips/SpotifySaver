@@ -8,6 +8,9 @@ angular.module('appRoutes', [])
           controller: 'homeController',
           controllerAs: 'vm'
         })
+        .when('/about',{
+          templateUrl: 'views/about.html'
+        })
 
       $locationProvider.html5Mode(true);
 

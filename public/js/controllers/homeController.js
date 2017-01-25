@@ -8,9 +8,12 @@
 
     function homeController(Songs) {
         var vm = this;
-        vm.songs; 
+        vm.songs = {}; 
+
         Songs.get().then(function(response){
-            vm.songs = response.data.values;
-        })
+            vm.songs = response.data.values.reverse();
+        }
+
+        )
     }
 })()

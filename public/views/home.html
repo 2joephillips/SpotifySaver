@@ -1,8 +1,18 @@
-<div class="container">
-  <div class="jumbotron text Center">
-    <h1>SpotifySaver</h1> 
-    <p>SpotifySaver is a proof of concept</p> 
+<div class="jumbotron text Center">
+  <h1>SpotifySaver</h1>
+  <p>SpotifySaver is a proof of concept to chain together Spotify, IFFT, and Google Drive to display songs and albums liked
+    on Spotify.</p>
+</div>
+<div ng-repeat="song in vm.songs">
+  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+    <div class="hovereffect">
+      <img class="img-responsive" src="{{song[4]}}" alt="">
+      <div class="overlay">
+        <p style="text-align: left">
+          Song: {{song[1]}} <br> Artist: {{song[2]}} <br> Album: {{song[3]}} <br>
+          <a href="{{song[5]}}" target="_blank">LINK HERE</a>
+        </p>
+      </div>
+    </div>
   </div>
 </div>
-
-<pre>{{vm | json}}</pre>
