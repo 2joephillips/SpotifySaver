@@ -1,18 +1,24 @@
 <div class="jumbotron text Center">
-  <h1>SpotifySaver</h1>
-  <p>SpotifySaver is a proof of concept to chain together Spotify, IFFT, and Google Drive to display songs and albums liked
-    on Spotify.</p>
-</div>
-<div ng-repeat="song in vm.songs">
-  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-    <div class="hovereffect">
-      <img class="img-responsive" src="{{song[4]}}" alt="">
-      <div class="overlay">
-        <p style="text-align: left">
-          Song: {{song[1]}} <br> Artist: {{song[2]}} <br> Album: {{song[3]}} <br>
-          <a href="{{song[5]}}" target="_blank">LINK HERE</a>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-2 col-md-4">
+        <img src="/assets/face_Me2.jpg" class="img-circle" alt="" style="width: 175px"/>
+      </div>
+      <div class="col-lg-8 col-md-8 pull-right" style="text-align: left">
+        <h2>I love Music and Coding</h2>
+        <p class="lead">So, I created this convoluted application to display songs that I like on Spotify on this website. 
+          To accomplish this, I use IF to log all songs that I like on Spotify to a Google Drive spreadsheet. This spreadsheet is 
+          used as the database for this site. (Yes, I know there is a Spotify API)
         </p>
       </div>
     </div>
   </div>
 </div>
+
+<div class="btn-group" role="group" aria-label="...">
+  <button type="button" ng-class="{'btn-primary': vm.display == 'recent'}" ng-click="vm.display = 'recent'" class="btn btn-default">Most Recent Songs</button>
+  <button type="button" ng-class="{'btn-primary': vm.display == 'all'}" ng-click="vm.display = 'all'" class="btn btn-default">All Songs</button>
+</div>
+
+<div ng-if="vm.display === 'recent'" ng-include="'views/mostRecent.html'"></div>
+<div ng-if="vm.display === 'all'" ng-include="'views/allSongs.html'"></div>
